@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>InventoryManager v1.1 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>InventoryManager v1.1 - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>AY1920S2-CS2103-W14-2</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -33,7 +33,23 @@
 <li><a href="#dev-ops">6. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-uc2-listing-all-goods">Use case: UC2 - listing all goods</a></li>
+<li><a href="#use-case-uc3-adding-a-supplier">Use case: UC3 - adding a supplier</a></li>
+<li><a href="#use-case-uc4-deleting-a-supplier">Use case: UC4 - deleting a supplier</a></li>
+<li><a href="#use-case-uc5-deleting-all-suppliers">Use case: UC5 - deleting all suppliers</a></li>
+<li><a href="#use-case-uc6-editing-a-supplier">Use case: UC6 - editing a supplier</a></li>
+<li><a href="#use-case-uc7-finding-a-supplier-for-a-particular-goods">Use case: UC7 - finding a supplier for a particular goods</a></li>
+<li><a href="#use-case-uc8-buying-a-particular-goods">Use case: UC8 - buying a particular goods</a></li>
+<li><a href="#use-case-uc9-selling-a-particular-goods">Use case: UC9 - selling a particular goods</a></li>
+<li><a href="#use-case-uc10-finding-goods-low-in-quantity">Use case: UC10 - finding goods low in quantity</a></li>
+<li><a href="#use-case-uc11-set-lower-threshold-quantity-of-goods">Use case: UC11 - set lower threshold quantity of goods</a></li>
+<li><a href="#use-case-uc12-set-upper-threshold-quantity-of-goods">Use case: UC12 - set upper threshold quantity of goods</a></li>
+<li><a href="#use-case-uc13-listing-all-past-transactions">Use case: UC13 - listing all past transactions</a></li>
+<li><a href="#use-case-uc14-deleting-all-transaction-history">Use case: UC14 - deleting all transaction history</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -76,14 +92,14 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/docs/diagrams/">diagrams</a> folder.
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/docs/diagrams/">diagrams</a> folder.
 Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -170,13 +186,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -202,7 +218,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -254,7 +270,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -299,7 +315,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103-W14-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -628,7 +644,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>has a need to manage a large number of <a href="#fast-moving-consumer-goods">fast-moving consumer goods (FMCG)</a> which arrives in batches</p>
+</li>
+<li>
+<p>has a need to manage a large number of suppliers</p>
+</li>
+<li>
+<p>has a need to draw insights from analysing transactions with suppliers and customers</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -645,7 +667,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: manage an FMCG store faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -675,68 +697,143 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use InventoryManager</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new supplier</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new goods</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a supplier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a supplier by goods sold</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate the relevant suppliers without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a goods by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate the relevant goods without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see goods that are low in stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what to buy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see goods that are low in stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">buy more before running out</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update inventory with the <a href="#transaction-record">transaction records</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid keeping track of the inventory personally</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update prices of goods offered by suppliers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account for changes in supply agreement or prices</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a set purchase order automatically on a regular basis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">simulate supply contracts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clumsy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo previous actions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fix mistakes in inputs or spelling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified of goods falling below a set quantity threshold</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">buy expected goods in advance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be notified of goods that are above a set quantity threshold</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid expiration of large number of goods</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hide transaction details by default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set expiry event for a batch of goods</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account for expiration of goods</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change names of goods</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid confusion when producers change the name of their products</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a summary of the transactions throughout the day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">determine performance of the day</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expanding user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see a performance tracker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find points of improvement in business activity</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clumsy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receive suggestion for the next words</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avoid misspelling and be reminded of syntax</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>InventoryManager</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-uc1-listing-all-suppliers" class="discrete">Use case: UC1 - listing all suppliers</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User requests to list suppliers.</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
-</li>
-<li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
+<p>InventoryManager shows a list of suppliers.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -750,18 +847,50 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <ul class="none">
 <li>
 <p>2a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows a message to inform that there are no suppliers.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc2-listing-all-goods"><a class="link" href="#use-case-uc2-listing-all-goods">Use case: UC2 - listing all goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>3a. The given index is invalid.</p>
+<p>User requests to list goods.</p>
+</li>
+<li>
+<p>InventoryManager shows a list of goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>2a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows a message to inform that there are no goods.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -769,8 +898,933 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc3-adding-a-supplier"><a class="link" href="#use-case-uc3-adding-a-supplier">Use case: UC3 - adding a supplier</a></h3>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a supplier with given details.</p>
+</li>
+<li>
+<p>InventoryManager creates a supplier with the given details.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given details of the supplier is incomplete.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Inventory Manager shows an error message to indicate the incomplete details.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. The given details of the supplier is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Inventory Manager shows an error message to indicate the invalid details.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. The given details contains a non-supported parameter e.g. age.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. Inventory Manager shows an error message to indicate the non-supported parameter.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d. The specified supplier already exists.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d1. Inventory Manager shows an error message to indicate that the supplier already exists.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc4-deleting-a-supplier"><a class="link" href="#use-case-uc4-deleting-a-supplier">Use case: UC4 - deleting a supplier</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all suppliers (UC1).</span></p>
+</li>
+<li>
+<p>User selects a supplier from the list and requests to delete the supplier by the index shown on the list.</p>
+</li>
+<li>
+<p>InventoryManager deletes the supplier.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the invalid index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc5-deleting-all-suppliers"><a class="link" href="#use-case-uc5-deleting-all-suppliers">Use case: UC5 - deleting all suppliers</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete all suppliers.</p>
+</li>
+<li>
+<p>InventoryManager requests for a confirmation to delete all suppliers.</p>
+</li>
+<li>
+<p>User confirms the deletion.</p>
+</li>
+<li>
+<p>InventoryManager deletes the supplier list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no suppliers.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. InventoryManager informs the user that there are no suppliers</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The user cancels the deletion.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc6-editing-a-supplier"><a class="link" href="#use-case-uc6-editing-a-supplier">Use case: UC6 - editing a supplier</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all suppliers (UC1).</span></p>
+</li>
+<li>
+<p>User requests to edit a supplier specified by the index and gives the new parameters.</p>
+</li>
+<li>
+<p>InventoryManager updates the details of the supplier.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the invalid index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given details of the supplier is incomplete.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Inventory Manager shows an error message to indicate the incomplete details.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. The given details of the supplier is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Inventory Manager shows an error message to indicate the invalid details.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d. The given details contains a non-supported parameter e.g. age.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d1. Inventory Manager shows an error message to indicate the non-supported parameter.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2e. The new details are the same as another existing supplier.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2e1. Inventory Manager shows an error message to indicate that the supplier already exists.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc7-finding-a-supplier-for-a-particular-goods"><a class="link" href="#use-case-uc7-finding-a-supplier-for-a-particular-goods">Use case: UC7 - finding a supplier for a particular goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all goods (UC2).</span></p>
+</li>
+<li>
+<p>User requests to list the suppliers supplying the goods with a specified name.</p>
+</li>
+<li>
+<p>InventoryManager shows a list of suppliers providing this goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The goods with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the goods does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. InventoryManager informs the user that there are no suppliers providing this goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc8-buying-a-particular-goods"><a class="link" href="#use-case-uc8-buying-a-particular-goods">Use case: UC8 - buying a particular goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all the suppliers for a particular good (UC7).</span></p>
+</li>
+<li>
+<p>User requests to make a buy order for a quantity of the particular goods from a supplier.</p>
+</li>
+<li>
+<p>InventoryManager adds the order and adds the quantity to the total number of that particular goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The goods with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the goods does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The supplier with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. InventoryManager shows an error message to indicate the supplier does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. The quantity given is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. InventoryManager shows an error message to indicate the quantity is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d. One or more parameters are missing.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d1. InventoryManager shows an error message to indicate the missing parameters.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc9-selling-a-particular-goods"><a class="link" href="#use-case-uc9-selling-a-particular-goods">Use case: UC9 - selling a particular goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all goods (UC2).</span></p>
+</li>
+<li>
+<p>User requests to make a selling order of a quantity of a particular goods.</p>
+</li>
+<li>
+<p>InventoryManager adds the sell order and deducts the quantity in the selling order to the total number of the particular goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The goods with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the goods does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The quantity given is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. InventoryManager shows an error message to indicate the quantity is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. The quantity given exceeds current amount in inventory.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. InventoryManager shows an error message to indicate insufficient quantity.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d. One or more parameters are missing.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2d1. InventoryManager shows an error message to indicate the missing parameters.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc10-finding-goods-low-in-quantity"><a class="link" href="#use-case-uc10-finding-goods-low-in-quantity">Use case: UC10 - finding goods low in quantity</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to display all goods that are below their respective minimum warning quantity.</p>
+</li>
+<li>
+<p>InventoryManager lists all the goods that satisfy that condition.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. InventoryManager informs the user that there are no goods that are low in quantity.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc11-set-lower-threshold-quantity-of-goods"><a class="link" href="#use-case-uc11-set-lower-threshold-quantity-of-goods">Use case: UC11 - set lower threshold quantity of goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all goods (UC2).</span></p>
+</li>
+<li>
+<p>User sets a lower quantity threshold for a particular goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The quantity is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the quantity is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The quantity is above the upper threshold, if it exists.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. InventoryManager shows an error message to indicate the quantity is above the upper threshold.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. The goods with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. InventoryManager shows an error message to indicate the goods does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc12-set-upper-threshold-quantity-of-goods"><a class="link" href="#use-case-uc12-set-upper-threshold-quantity-of-goods">Use case: UC12 - set upper threshold quantity of goods</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">lists all goods (UC2).</span></p>
+</li>
+<li>
+<p>User sets an upper quantity threshold for a particular goods.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The quantity is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager shows an error message to indicate the quantity is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The quantity is below the lower threshold, if it exists.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. InventoryManager shows an error message to indicate the quantity is below the lower threshold.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. The goods with the given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. InventoryManager shows an error message to indicate the goods does not exist.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc13-listing-all-past-transactions"><a class="link" href="#use-case-uc13-listing-all-past-transactions">Use case: UC13 - listing all past transactions</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list all past transactions.</p>
+</li>
+<li>
+<p>InventoryManager lists all past transactions.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. InventoryManager informs the user that there are no past transactions.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc14-deleting-all-transaction-history"><a class="link" href="#use-case-uc14-deleting-all-transaction-history">Use case: UC14 - deleting all transaction history</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete transaction history.</p>
+</li>
+<li>
+<p>InventoryManager requests for a confirmation to delete the transaction history.</p>
+</li>
+<li>
+<p>User confirms the deletion.</p>
+</li>
+<li>
+<p>InventoryManager deletes the transaction history.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no past transactions.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. InventoryManager informs the user that there are no past transactions.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. The user cancels the deletion.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -783,15 +1837,27 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should be able to hold up to 1000 suppliers and goods without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>Should run without any internet connection.</p>
+</li>
+<li>
+<p>Should have a human-editable storage text file.</p>
+</li>
+<li>
+<p>Should not require a database.</p>
+</li>
+<li>
+<p>Should not require an installer to use.</p>
+</li>
+<li>
+<p>Should not exceed 100MB in application size.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -800,13 +1866,17 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="fast-moving-consumer-goods"></a> Fast-moving consumer goods</dt>
+<dd>
+<p>Goods that are characterised by large inventory quantities, high turnover rate, numerous suppliers and short shelf-life.</p>
+</dd>
+<dt class="hdlist1"><a id="transaction-record"></a> Transaction record</dt>
+<dd>
+<p>A record of an event that results in change in the quantity of goods i.e. buying/selling.</p>
+</dd>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
-<p>Windows, Linux, Unix, OS-X</p>
-</dd>
-<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
-<dd>
-<p>A contact detail that is not meant to be shared with others</p>
+<p>Windows, Linux, Unix, OS-X.</p>
 </dd>
 </dl>
 </div>
@@ -958,4 +2028,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-13 08:03:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-02 03:17:47 UTC</div></div></div></body></html>

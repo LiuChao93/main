@@ -12,19 +12,19 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
 endif::[]
-:repoURL: https://github.com/se-edu/addressbook-level3
+:repoURL: https://github.com/AY1920S2-CS2103-W14-2/main
 
-By: `Team SE-EDU`      Since: `Jun 2016`      Licence: `MIT`
+By: `AY1920S2-CS2103-W14-2`      Since: `Feb 2020`      Licence: `MIT`
 
 == Introduction
 
-AddressBook Level 3 (AB3) is for those who *prefer to use a desktop app for managing contacts*. More importantly, AB3 is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <<Quick Start>> to get started. Enjoy!
+InventoryManager is for those who *prefer to use a desktop app for managing their inventory*. More importantly, InventoryManager is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, InventoryManager can get your inventory management tasks done faster than traditional GUI apps. Interested? Jump to the <<Quick Start>> to get started. Enjoy!
 
 == Quick Start
 
 .  Ensure you have Java `11` or above installed in your Computer.
-.  Download the latest `addressbook.jar` link:{repoURL}/releases[here].
-.  Copy the file to the folder you want to use as the home folder for your Address Book.
+.  Download the latest `inventorymanager.jar` link:{repoURL}/releases[here].
+.  Copy the file to the folder you want to use as the home folder for your InventoryManager.
 .  Double-click the file to start the app. The GUI should appear in a few seconds.
 +
 image::Ui.png[width="790"]
@@ -33,9 +33,9 @@ image::Ui.png[width="790"]
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
-* *`list`* : lists all contacts
-* **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : adds a contact named `John Doe` to the Address Book.
-* **`delete`**`3` : deletes the 3rd contact shown in the current list
+* *`list-s`* : lists all suppliers
+* **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 gp/apple 4.50` : adds a supplier named `John Doe` selling apples at 4.50 each to the InventoryManager.
+* **`delete-s`**`3` : deletes the 3rd supplier shown in the current list
 * *`exit`* : exits the app
 
 .  Refer to <<Features>> for details of each command.
@@ -47,56 +47,57 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 *Command Format*
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
-* Items in square brackets are optional e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
-* Items with `…`​ after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+* Items in square brackets are optional e.g `n/NAME [gp/GOOD PRICE]` can be used as `n/John Doe gp/apple 4.50` or as `n/John Doe`.
+* Items with `…`​ after them can be used multiple times including zero times e.g. `[gp/GOOD PRICE]...` can be used as `{nbsp}` (i.e. 0 times), `gp/apple 4.50`, `gp/orange 2.00 gp/pear 5.00` etc.
 * Parameters can be in any order e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+* All dates follow the format `yyyy-MM-dd`
 ====
 
 === Viewing help : `help`
 
 Format: `help`
 
-=== Adding a person: `add`
+=== Adding a supplier: `add`
 
-Adds a person to the address book +
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
+Adds a supplier to the inventory manager +
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [gp/GOOD PRICE]...`
 
 [TIP]
-A person can have any number of tags (including 0)
+A supplier can have any number of good-price pairs (including 0)
 
 Examples:
 
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 gp/drugs 500`
 
-=== Listing all persons : `list`
+=== Listing all suppliers : `list-s`
 
-Shows a list of all persons in the address book. +
-Format: `list`
+Shows a list of all suppliers in the inventory manager. +
+Format: `list-s`
 
-=== Editing a person : `edit`
+=== Editing a supplier : `edit-s`
 
-Edits an existing person in the address book. +
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
+Edits an existing supplier in the inventory manager. +
+Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [gp/GOOD PRICE]...`
 
 ****
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index *must be a positive integer* 1, 2, 3, ...
+* Edits the supplier at the specified `INDEX`. The index refers to the index number shown in the displayed supplier list. The index *must be a positive integer* 1, 2, 3, ...
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-* You can remove all the person's tags by typing `t/` without specifying any tags after it.
+* When editing good-price pairs, the existing good-price pairs of the person will be removed i.e adding of good-price pairs is not cumulative.
+* You can remove all the person's good-price pairs by typing `gp/` without specifying any tags after it.
 ****
 
 Examples:
 
-* `edit 1 p/91234567 e/johndoe@example.com` +
-Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-* `edit 2 n/Betsy Crower t/` +
-Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+* `edit-s 1 p/91234567 e/johndoe@example.com` +
+Edits the phone number and email address of the 1st supplier to be `91234567` and `johndoe@example.com` respectively.
+* `edit-s 2 n/Betsy Crower gp/` +
+Edits the name of the 2nd person to be `Betsy Crower` and clears all existing good-price pairs.
 
-=== Locating persons by name: `find`
+=== Locating suppliers by name: `find`
 
-Finds persons whose names contain any of the given keywords. +
+Finds suppliers whose names contain any of the given keywords. +
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 ****
@@ -112,34 +113,102 @@ Examples:
 * `find John` +
 Returns `john` and `John Doe`
 * `find Betsy Tim John` +
-Returns any person having names `Betsy`, `Tim`, or `John`
+Returns any supplier having names `Betsy`, `Tim`, or `John`
 
 // tag::delete[]
-=== Deleting a person : `delete`
+=== Deleting a supplier : `delete-s`
 
-Deletes the specified person from the address book. +
-Format: `delete INDEX`
+Deletes the specified supplier from the address book. +
+Format: `delete-s INDEX`
 
 ****
-* Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
+* Deletes the supplier at the specified `INDEX`.
+* The index refers to the index number shown in the displayed supplier list.
 * The index *must be a positive integer* 1, 2, 3, ...
 ****
 
 Examples:
 
-* `list` +
-`delete 2` +
-Deletes the 2nd person in the address book.
+* `list-s` +
+`delete-s 2` +
+Deletes the 2nd supplier in the inventory manager.
 * `find Betsy` +
-`delete 1` +
-Deletes the 1st person in the results of the `find` command.
+`delete-s 1` +
+Deletes the 1st supplier in the results of the `find` command.
 
 // end::delete[]
-=== Clearing all entries : `clear`
+=== Clearing all supplier entries : `clear-s`
 
-Clears all entries from the address book. +
-Format: `clear`
+Clears all supplier entries from the address book. +
+Format: `clear-s`
+
+=== Buying goods from supplier: `buy`
+
+Buys a particular goods from the supplier. +
+Format: `buy n/SUPPLIER_NAME g/GOOD_NAME q/QUANTITY x/EXPIRY_DATE d/TRANSACTION_DATE`
+
+[TIP]
+If the goods does not exist in the inventory, this will also create an entry for the goods.
+
+Example:
+
+* `buy n/Dave g/apple q/4 x/2003-08-01 d/2002-07-03` +
+Buys 4 apples from a certain supplier named Dave with the above transaction and expiry dates.
+
+=== Selling goods: `sell`
+
+Sells a particular goods from the inventory.. +
+Format: `sell g/GOOD_NAME q/QUANTITY d/TRANSACTION_DATE`
+
+Example:
+
+* `sell g/apple q/4 d/2030-01-05` +
+Sells 4 apples at the above date.
+
+=== Listing all goods: `list-i`
+
+Lists all goods in the inventory. +
+Format: `list-i`
+
+=== Listing all expiring goods: `list-e`
+
+Lists all expiring goods batches in the inventory. +
+Format: `list-e`
+
+=== Listing all transaction-history: `list-t`
+
+Displays all the transactions (buy and sell orders) in the past, in reverse chronological order. +
+Format: `list-t`
+
+=== Sourcing suppliers for a particular goods: `source`
+
+Displays all the suppliers selling the specified goods, sorted in increasing price. +
+Format: `source g/GOOD_NAME`
+
+=== Listing goods in low in quantity: `list-l`
+
+Displays all items that have fallen below their respective minimum quantity thresholds in the inventory. +
+Format: `list-l`
+
+=== Clearing all transaction history: `clear-t`
+
+Clears all the transaction entries from the inventory manager. +
+Format: `clear-t`
+
+=== Editing a buy order: `edit-bo`
+
+Edits an existing buy order in the transaction history. +
+Format: `edit-bo INDEX [n/SUPPLIER_NAME] [g/GOOD_NAME] [q/QUANTITY] [d/TRANSACTION_DATE] [x/EXPIRY_DATE]`
+
+=== Editing a sell order: `edit-so`
+
+Edits an existing sell order in the transaction history. +
+Format: `edit-so INDEX [g/GOOD_NAME][q/QUANTITY][d/TRANSACTION_DATE]`
+
+=== Setting minimum quantity for goods: `set`
+
+Sets the minimum quantity threshold for a certain goods. All goods with quantity below this threshold will appear in the list of goods in shortage. +
+Format: `set g/GOOD_NAME q/MIN_QUANTITY`
 
 === Exiting the program : `exit`
 
@@ -148,30 +217,43 @@ Format: `exit`
 
 === Saving the data
 
-Address book data are saved in the hard disk automatically after any command that changes the data. +
+Inventory manager data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
 // tag::dataencryption[]
 === Encrypting data files `[coming in v2.0]`
 
-_{explain how the user can enable/disable data encryption}_
+For security concerns, all data will be encrypted by default.
 // end::dataencryption[]
 
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
-*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.
+*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous InventoryManager folder.
 
 == Command Summary
 
-* *Add* `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...` +
-e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-* *Clear* : `clear`
-* *Delete* : `delete INDEX` +
-e.g. `delete 3`
-* *Edit* : `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]...` +
-e.g. `edit 2 n/James Lee e/jameslee@example.com`
-* *Find* : `find KEYWORD [MORE_KEYWORDS]` +
+* *Add supplier* `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [gp/GOOD PRICE]...` +
+e.g. `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 gp/pen 1.00`
+* *List supplier* : `list-s`
+* *Clear suppliers* : `clear-s`
+* *Delete supplier* : `delete-s INDEX` +
+e.g. `delete-s 3`
+* *Edit supplier* : `edit-s INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [gp/GOOD PRICE]...` +
+e.g. `edit-s 2 n/James Lee e/jameslee@example.com`
+* *Find supplier* : `find KEYWORD [MORE_KEYWORDS]` +
 e.g. `find James Jake`
-* *List* : `list`
+* *List goods*: `list-i`
+* *List supplier for a goods*: `source`
+* *Buy goods*: `buy n/SUPPLIER_NAME g/GOOD_NAME q/QUANTITY x/EXPIRY_DATE d/TRANSACTION_DATE` +
+e.g. `buy n/Dave g/apple q/4 x/2003-08-01 d/2002-07-03`
+* *Sell goods*: `sell g/GOOD_NAME q/QUANTITY d/TRANSACTION_DATE` +
+e.g. `sell g/apple q/4 d/2030-01-05`
+* *List goods low in quantity*: `list-l`
+* *Set minimum quantity for goods*: `set g/GOOD_NAME q/MIN_QUANTITY`
+* *List expiring goods*: `list-e`
+* *List transaction history*: `list-t`
+* *Clear transaction history*: `clear-t`
+* *Edit buy order*: `edit-bo INDEX [n/SUPPLIER_NAME] [g/GOOD_NAME] [q/QUANTITY] [d/TRANSACTION_DATE] [x/EXPIRY_DATE]`
+* *Edit sell order*: `edit-so INDEX [g/GOOD_NAME][q/QUANTITY][d/TRANSACTION_DATE]`
 * *Help* : `help`

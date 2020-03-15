@@ -37,7 +37,7 @@ Responsibilities: Inventory
 
 === Liu Chao
 image::liuchao93.png[width="150", align="left"]
-{empty}[https://github.com/LiuChao93[github]] [<<johndoe#, portfolio>>]
+{empty}[https://github.com/LiuChao93[github]] [<<liuchao#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Suppliers

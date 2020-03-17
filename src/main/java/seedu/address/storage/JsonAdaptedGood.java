@@ -52,7 +52,7 @@ class JsonAdaptedGood {
         }
         final GoodName modelGoodName = new GoodName(goodName);
 
-        if (!GoodQuantity.isValidGoodQuantity(goodQuantity)) {
+        if (!GoodQuantity.isValidGoodQuantity(String.valueOf(goodQuantity))) {
             throw new IllegalValueException(GoodQuantity.MESSAGE_CONSTRAINTS);
         }
         final GoodQuantity modelGoodQuantity = new GoodQuantity(goodQuantity);

@@ -21,13 +21,13 @@ public class GoodQuantityTest {
     @Test
     public void isValidGoodQuantity() {
         // invalid quantity
-        assertFalse(GoodQuantity.isValidGoodQuantity(-1)); // negative value
+        assertFalse(GoodQuantity.isValidGoodQuantity(String.valueOf(-1))); // negative value
 
         // valid quantity
-        assertTrue(GoodQuantity.isValidGoodQuantity(0));
-        assertTrue(GoodQuantity.isValidGoodQuantity(1));
-        assertTrue(GoodQuantity.isValidGoodQuantity(+1)); // positive value with plus sign
-        assertTrue(GoodQuantity.isValidGoodQuantity(100));
+        assertTrue(GoodQuantity.isValidGoodQuantity(String.valueOf(0)));
+        assertTrue(GoodQuantity.isValidGoodQuantity(String.valueOf(1)));
+        assertTrue(GoodQuantity.isValidGoodQuantity(String.valueOf(+1))); // positive value with plus sign
+        assertTrue(GoodQuantity.isValidGoodQuantity(String.valueOf(100)));
     }
 
     @Test

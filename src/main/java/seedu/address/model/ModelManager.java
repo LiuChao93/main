@@ -160,6 +160,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public int indexOfGood(Good good) {
+        return inventory.index(good);
+    }
+
+    @Override
     public void setGood(Good target, Good editedGood) {
         requireAllNonNull(target, editedGood);
 

@@ -135,4 +135,19 @@ public class UniqueGoodList implements Iterable<Good> {
         return true;
     }
 
+    /**
+     * Returns the index of the first occurrence of the specified element in this list,
+     * or -1 if this list does not contain the element, Used to find the index of an existing good
+     * so it's quantity can be retreived.
+     * @param toFind good to be found
+     * @return index of good to be found in the internal list
+     */
+    public int indexOf(Good toFind) {
+        for (int i = 0; i < internalList.size(); ++i) {
+            if (internalList.get(i).isSameGood(toFind)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

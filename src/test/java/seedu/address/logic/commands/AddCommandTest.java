@@ -187,6 +187,11 @@ public class AddCommandTest {
         }
 
         @Override
+        public int indexOfGood(Good good) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void setGood(Good target, Good editedGood) {
             throw new AssertionError("This method should not be called.");
         }

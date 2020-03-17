@@ -48,6 +48,10 @@ public class Inventory implements ReadOnlyInventory {
         this.goods.setGoods(goods);
     }
 
+    public int index(Good toFind) {
+        return goods.indexOf(toFind);
+    }
+
     /**
      * Resets the existing data of this {@code Inventory} with {@code newData}.
      */

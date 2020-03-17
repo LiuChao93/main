@@ -12,7 +12,6 @@ import java.util.Objects;
  * More methods may be added to enhance the functionality.
  */
 public class Good {
-
     // Identity fields
     private final GoodName goodName;
     private final GoodQuantity goodQuantity;

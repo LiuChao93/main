@@ -12,6 +12,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.good.GoodName;
+import seedu.address.model.good.GoodQuantity;
 import seedu.address.model.offer.Offer;
 import seedu.address.model.offer.Price;
 import seedu.address.model.supplier.Address;
@@ -52,6 +53,21 @@ public class ParserUtil {
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
         return new Name(trimmedName);
+    }
+
+    /**
+     * Parses a {@code String goodName} into a {@code goodName}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code goodName} is invalid.
+     */
+    public static GoodName parseGoodName(String goodName) throws ParseException {
+        requireNonNull(goodName);
+        String trimmedName = goodName.trim();
+        if (!GoodName.isValidGoodName(trimmedName)) {
+            throw new ParseException(GoodName.MESSAGE_CONSTRAINTS);
+        }
+        return new GoodName(trimmedName);
     }
 
     /**
@@ -117,24 +133,9 @@ public class ParserUtil {
 
         String goodString = goodPricePair[0];
         String priceString = goodPricePair[1];
-        GoodName good = parseGood(goodString);
+        GoodName good = parseGoodName(goodString);
         Price price = parsePrice(priceString);
         return new Offer(good, price);
-    }
-
-    /**
-     * Parses a {@code String good} into a {@code Good}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException if the given {@code good} is invalid.
-     */
-    public static GoodName parseGood(String good) throws ParseException {
-        requireNonNull(good);
-        String trimmedGood = good.trim();
-        if (!GoodName.isValidGoodName(trimmedGood)) {
-            throw new ParseException(GoodName.MESSAGE_CONSTRAINTS);
-        }
-        return new GoodName(trimmedGood);
     }
 
     /**
@@ -198,5 +199,20 @@ public class ParserUtil {
         result[0] = new GoodName(goodAndPrice[0]);
         result[1] = new Price(goodAndPrice[1]);
         return result;
+    }
+
+    /**
+     * Parses a {@code String goodQuantity} into a {@code goodQuantity}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code goodQuantity} is invalid.
+     */
+    public static GoodQuantity parseGoodQuantity(String goodQuantity) throws ParseException {
+        requireNonNull(goodQuantity);
+        String trimmedQuantity = goodQuantity.trim();
+        if (!GoodQuantity.isValidGoodQuantity(trimmedQuantity)) {
+            throw new ParseException(GoodQuantity.MESSAGE_CONSTRAINTS);
+        }
+        return new GoodQuantity(trimmedQuantity);
     }
 }

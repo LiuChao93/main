@@ -19,7 +19,7 @@ Responsibilities: Suppliers
 
 === Pang Jia Da
 image::pangjiada.png[width="150", align="left"]
-{empty}[https://github.com/PangJiaDa[github]] [<<johndoe#, portfolio>>]
+{empty}[https://github.com/PangJiaDa[github]] [<<pangjiada#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Transactions

@@ -1,7 +1,9 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,11 +11,13 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.good.GoodName;
+import seedu.address.model.offer.Offer;
+import seedu.address.model.offer.Price;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -96,29 +100,103 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String tag} into a {@code Tag}.
+     * Parses a {@code String offer} into a {@code Offer}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code tag} is invalid.
+     * @throws ParseException if the given {@code offer} or its constituent is invalid.
      */
-    public static Tag parseTag(String tag) throws ParseException {
-        requireNonNull(tag);
-        String trimmedTag = tag.trim();
-        if (!Tag.isValidTagName(trimmedTag)) {
-            throw new ParseException(Tag.MESSAGE_CONSTRAINTS);
+    public static Offer parseOffer(String offer) throws ParseException {
+        requireNonNull(offer);
+        String trimmedOffer = offer.trim();
+
+        if (!trimmedOffer.contains(" ")) {
+            throw new ParseException(Offer.MESSAGE_CONSTRAINTS);
         }
-        return new Tag(trimmedTag);
+
+        String[] goodPricePair = splitOnLastWhitespace(trimmedOffer);
+
+        String goodString = goodPricePair[0];
+        String priceString = goodPricePair[1];
+        GoodName good = parseGood(goodString);
+        Price price = parsePrice(priceString);
+        return new Offer(good, price);
     }
 
     /**
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>}.
+     * Parses a {@code String good} into a {@code Good}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code good} is invalid.
      */
-    public static Set<Tag> parseTags(Collection<String> tags) throws ParseException {
-        requireNonNull(tags);
-        final Set<Tag> tagSet = new HashSet<>();
-        for (String tagName : tags) {
-            tagSet.add(parseTag(tagName));
+    public static GoodName parseGood(String good) throws ParseException {
+        requireNonNull(good);
+        String trimmedGood = good.trim();
+        if (!GoodName.isValidGoodName(trimmedGood)) {
+            throw new ParseException(GoodName.MESSAGE_CONSTRAINTS);
         }
-        return tagSet;
+        return new GoodName(trimmedGood);
+    }
+
+    /**
+     * Parses a {@code String price} into a {@code price}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code price} is invalid.
+     */
+    public static Price parsePrice(String price) throws ParseException {
+        requireNonNull(price);
+        String trimmedPrice = price.trim();
+        if (!Price.isValidPrice(trimmedPrice)) {
+            throw new ParseException(Price.MESSAGE_CONSTRAINTS);
+        }
+
+        return new Price(trimmedPrice);
+    }
+
+    /**
+     * Parses {@code Collection<String> offers} into a {@code Set<Offer>}.
+     */
+    public static Set<Offer> parseOffers(Collection<String> offers) throws ParseException {
+        requireAllNonNull(offers);
+        final Set<Offer> offerSet = new HashSet<>();
+        for (String offer : offers) {
+            offerSet.add(parseOffer(offer));
+        }
+        return offerSet;
+    }
+
+    /**
+     * Returns a {@code String} array as if {@code String.split()} is called only on its last whitespace.
+     * Assumes: the {@code String} is already stripped of trailing and leading whitespaces,
+     * and contains at least one whitespace.
+     *
+     * @param string the {@code String} to be split
+     * @return the {@code String} array containing the split result
+     */
+    public static String[] splitOnLastWhitespace(String string) {
+        requireNonNull(string);
+        String[] words = string.split(" ");
+        String[] result = new String[2];
+
+        result[0] = String.join(" ", Arrays.copyOfRange(words, 0, words.length - 1));
+        result[1] = words[words.length - 1];
+
+        return result;
+    }
+
+    /**
+     * Returns an Object array containing a Good and a Price in indices 0 and 1 respectively.
+     * It is still subject to the same validation as the class constructors, but assumes that all input is valid.
+     * The {@code Good} and {@code Price} corresponds to the one specified in the string.
+     *
+     * @param goodAndPrice the string representation of the good and price pair
+     * @return an {@code Object} array containing the {@code Good} and {@code Price}
+     */
+    public static Object[] getGoodPricePair(String[] goodAndPrice) {
+        requireAllNonNull(goodAndPrice);
+        Object[] result = new Object[2];
+        result[0] = new GoodName(goodAndPrice[0]);
+        result[1] = new Price(goodAndPrice[1]);
+        return result;
     }
 }

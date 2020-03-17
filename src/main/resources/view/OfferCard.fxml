@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.layout.Region?>
+
+<fx:root alignment="CENTER_LEFT" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <minWidth>
+        <!-- Ensures that the label text is never truncated -->
+        <Region fx:constant="USE_PREF_SIZE" />
+    </minWidth>
+    <children>
+        <Label fx:id="good" text="$good" wrapText="true">
+        </Label>
+        <Label fx:id="price" text="$price" />
+    </children>
+</fx:root>

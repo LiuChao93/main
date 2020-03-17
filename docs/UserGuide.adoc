@@ -85,7 +85,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [gp/GOOD PRICE]...`
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing good-price pairs, the existing good-price pairs of the person will be removed i.e adding of good-price pairs is not cumulative.
-* You can remove all the person's good-price pairs by typing `gp/` without specifying any tags after it.
+* You can remove all the person's good-price pairs by typing `gp/` without specifying any offers after it.
 ****
 
 Examples:

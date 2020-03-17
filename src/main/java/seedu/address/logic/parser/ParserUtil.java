@@ -14,10 +14,10 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.good.GoodName;
 import seedu.address.model.offer.Offer;
 import seedu.address.model.offer.Price;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
+import seedu.address.model.supplier.Address;
+import seedu.address.model.supplier.Email;
+import seedu.address.model.supplier.Name;
+import seedu.address.model.supplier.Phone;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.

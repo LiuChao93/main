@@ -23,8 +23,9 @@ import seedu.address.model.offer.Offer;
 import seedu.address.model.supplier.Address;
 import seedu.address.model.supplier.Email;
 import seedu.address.model.supplier.Name;
-import seedu.address.model.supplier.Supplier;
 import seedu.address.model.supplier.Phone;
+import seedu.address.model.supplier.Supplier;
+
 
 /**
  * Edits the details of an existing supplier in the address book.
@@ -90,7 +91,8 @@ public class EditCommand extends Command {
      * Creates and returns a {@code Supplier} with the details of {@code supplierToEdit}
      * edited with {@code editSupplierDescriptor}.
      */
-    private static Supplier createEditedSupplier(Supplier supplierToEdit, EditSupplierDescriptor editSupplierDescriptor) {
+    private static Supplier createEditedSupplier(Supplier supplierToEdit,
+                                                 EditSupplierDescriptor editSupplierDescriptor) {
         assert supplierToEdit != null;
 
         Name updatedName = editSupplierDescriptor.getName().orElse(supplierToEdit.getName());

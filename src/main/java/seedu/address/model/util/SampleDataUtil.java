@@ -17,8 +17,8 @@ import seedu.address.model.offer.Price;
 import seedu.address.model.supplier.Address;
 import seedu.address.model.supplier.Email;
 import seedu.address.model.supplier.Name;
-import seedu.address.model.supplier.Supplier;
 import seedu.address.model.supplier.Phone;
+import seedu.address.model.supplier.Supplier;
 
 /**
  * Contains utility methods for populating {@code AddressBook} and {@code Inventory} with sample data.

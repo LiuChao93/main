@@ -10,8 +10,6 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showSupplierAtIndex;
-import seedu.address.model.supplier.Supplier;
-import seedu.address.testutil.SupplierBuilder;
 import static seedu.address.testutil.TypicalGoods.getTypicalInventory;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_SUPPLIER;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_SUPPLIER;
@@ -25,8 +23,10 @@ import seedu.address.logic.commands.EditCommand.EditSupplierDescriptor;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
+import seedu.address.model.supplier.Supplier;
 import seedu.address.model.UserPrefs;
 import seedu.address.testutil.EditSupplierDescriptorBuilder;
+import seedu.address.testutil.SupplierBuilder;
 
 /**
  * Contains integration tests (interaction with the Model, UndoCommand and RedoCommand) and unit tests for EditCommand.

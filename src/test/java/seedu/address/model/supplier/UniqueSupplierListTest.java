@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_OFFER_BANANA;
 import static seedu.address.testutil.Assert.assertThrows;
-import seedu.address.testutil.SupplierBuilder;
 import static seedu.address.testutil.TypicalSuppliers.ALICE;
 import static seedu.address.testutil.TypicalSuppliers.BOB;
 
@@ -18,6 +17,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.model.supplier.exceptions.DuplicateSupplierException;
 import seedu.address.model.supplier.exceptions.SupplierNotFoundException;
+import seedu.address.testutil.SupplierBuilder;
 
 public class UniqueSupplierListTest {
 
@@ -159,7 +159,8 @@ public class UniqueSupplierListTest {
     @Test
     public void setSuppliers_listWithDuplicateSuppliers_throwsDuplicateSupplierException() {
         List<Supplier> listWithDuplicateSuppliers = Arrays.asList(ALICE, ALICE);
-        assertThrows(DuplicateSupplierException.class, () -> uniqueSupplierList.setSuppliers(listWithDuplicateSuppliers));
+        assertThrows(DuplicateSupplierException.class, () ->
+                uniqueSupplierList.setSuppliers(listWithDuplicateSuppliers));
     }
 
     @Test

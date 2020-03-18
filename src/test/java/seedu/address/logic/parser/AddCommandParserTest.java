@@ -31,8 +31,6 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_OFFER_BANANA;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
-import seedu.address.model.supplier.Supplier;
-import seedu.address.testutil.SupplierBuilder;
 import static seedu.address.testutil.TypicalSuppliers.AMY;
 import static seedu.address.testutil.TypicalSuppliers.BOB;
 
@@ -46,6 +44,8 @@ import seedu.address.model.supplier.Address;
 import seedu.address.model.supplier.Email;
 import seedu.address.model.supplier.Name;
 import seedu.address.model.supplier.Phone;
+import seedu.address.model.supplier.Supplier;
+import seedu.address.testutil.SupplierBuilder;
 
 public class AddCommandParserTest {
     private AddCommandParser parser = new AddCommandParser();
@@ -75,8 +75,8 @@ public class AddCommandParserTest {
                 + ADDRESS_DESC_BOB + OFFER_DESC_APPLE, new AddCommand(expectedSupplier));
 
         // multiple offers - all accepted
-        Supplier expectedSupplierMultipleOffers = new SupplierBuilder(BOB).withOffers(VALID_OFFER_APPLE, VALID_OFFER_BANANA)
-                .build();
+        Supplier expectedSupplierMultipleOffers =
+                new SupplierBuilder(BOB).withOffers(VALID_OFFER_APPLE, VALID_OFFER_BANANA).build();
         assertParseSuccess(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
                 + OFFER_DESC_APPLE + OFFER_DESC_BANANA, new AddCommand(expectedSupplierMultipleOffers));
     }

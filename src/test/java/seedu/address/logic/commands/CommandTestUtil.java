@@ -7,7 +7,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_OFFER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
-import seedu.address.model.supplier.Supplier;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.supplier.NameContainsKeywordsPredicate;
+import seedu.address.model.supplier.Supplier;
 import seedu.address.testutil.EditSupplierDescriptorBuilder;
 
 /**

@@ -5,9 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_OFFER_BANANA;
-import seedu.address.model.supplier.Supplier;
 import static seedu.address.testutil.Assert.assertThrows;
-import seedu.address.testutil.SupplierBuilder;
 import static seedu.address.testutil.TypicalSuppliers.ALICE;
 import static seedu.address.testutil.TypicalSuppliers.getTypicalAddressBook;
 
@@ -21,6 +19,8 @@ import org.junit.jupiter.api.Test;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.supplier.exceptions.DuplicateSupplierException;
+import seedu.address.model.supplier.Supplier;
+import seedu.address.testutil.SupplierBuilder;
 
 public class AddressBookTest {
 
@@ -60,7 +60,7 @@ public class AddressBookTest {
     }
 
     @Test
-    public void hasSupplier_SupplierNotInAddressBook_returnsFalse() {
+    public void hasSupplier_supplierNotInAddressBook_returnsFalse() {
         assertFalse(addressBook.hasSupplier(ALICE));
     }
 

@@ -50,7 +50,8 @@ public class AddCommandTest {
         AddCommand addCommand = new AddCommand(validSupplier);
         ModelStub modelStub = new ModelStubWithSupplier(validSupplier);
 
-        assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_SUPPLIER, () -> addCommand.execute(modelStub));
+        assertThrows(CommandException.class, AddCommand.MESSAGE_DUPLICATE_SUPPLIER, () ->
+                addCommand.execute(modelStub));
     }
 
     @Test

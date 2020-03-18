@@ -18,8 +18,8 @@ import org.junit.jupiter.api.Test;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.supplier.exceptions.DuplicateSupplierException;
 import seedu.address.model.supplier.Supplier;
+import seedu.address.model.supplier.exceptions.DuplicateSupplierException;
 import seedu.address.testutil.SupplierBuilder;
 
 public class AddressBookTest {

@@ -12,6 +12,7 @@ import static seedu.address.testutil.TypicalSuppliers.ALICE;
 import static seedu.address.testutil.TypicalSuppliers.BOB;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.testutil.SupplierBuilder;
 
 public class SupplierTest {

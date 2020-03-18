@@ -23,8 +23,8 @@ import seedu.address.logic.commands.EditCommand.EditSupplierDescriptor;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
-import seedu.address.model.supplier.Supplier;
 import seedu.address.model.UserPrefs;
+import seedu.address.model.supplier.Supplier;
 import seedu.address.testutil.EditSupplierDescriptorBuilder;
 import seedu.address.testutil.SupplierBuilder;
 

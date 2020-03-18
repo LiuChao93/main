@@ -194,7 +194,7 @@ public class ParserUtil {
      * @return an {@code Object} array containing the {@code Good} and {@code Price}
      */
     public static Object[] getGoodPricePair(String[] goodAndPrice) {
-        requireAllNonNull(goodAndPrice);
+        requireAllNonNull((Object[]) goodAndPrice);
         Object[] result = new Object[2];
         result[0] = new GoodName(goodAndPrice[0]);
         result[1] = new Price(goodAndPrice[1]);
